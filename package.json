@@ -1,0 +1,17 @@
+{
+  "name": "parser",
+  "version": "1.0.0",
+  "description": "vk parser for faraday",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "tsc main.ts && node main.js"
+  },
+  "author": "Denis Vasilenko",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.0.27",
+    "@types/puppeteer": "^3.0.1",
+    "puppeteer": "^5.2.1"
+  }
+}
