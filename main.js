@@ -39,8 +39,7 @@ exports.__esModule = true;
 var puppeteer = require("puppeteer");
 var fs = require("fs");
 var VkRobot = /** @class */ (function () {
-    function VkRobot(browser, page, login, password) {
-        this.browser = browser;
+    function VkRobot(page, login, password) {
         this.page = page;
         this.login = login;
         this.password = password;
@@ -59,7 +58,7 @@ var VkRobot = /** @class */ (function () {
                         return [4 /*yield*/, page.goto('https://vk.com/login')];
                     case 3:
                         _a.sent();
-                        return [2 /*return*/, new VkRobot(browser, page, options.login, options.password)];
+                        return [2 /*return*/, new VkRobot(page, options.login, options.password)];
                 }
             });
         });
@@ -179,8 +178,8 @@ var VkRobot = /** @class */ (function () {
             case 0:
                 options = {
                     headless: false,
-                    login: '89995871243',
-                    password: 'aspiresuse251227'
+                    login: '89999999999',
+                    password: 'password'
                 };
                 return [4 /*yield*/, VkRobot.build(options)];
             case 1:

@@ -1,6 +1,6 @@
 import * as puppeteer from 'puppeteer'
 import {
-    Browser, Page, ElementHandle
+    Page, ElementHandle
 } from "puppeteer";
 
 import * as fs from 'fs';
@@ -13,14 +13,12 @@ type TBuild = {
 
 class VkRobot {
 
-    constructor(browser: Browser, page: Page, login: string, password: string) {
-        this.browser = browser
+    constructor(page: Page, login: string, password: string) {
         this.page = page
         this.login = login
         this.password = password
     }
 
-    private browser: Browser
     private page: Page
     private readonly login: string
     private readonly password: string
@@ -29,7 +27,7 @@ class VkRobot {
         const browser = await VkRobot.initBrowser(options)
         const page = await browser.newPage()
         await page.goto('https://vk.com/login')
-        return new VkRobot(browser, page, options.login, options.password)
+        return new VkRobot(page, options.login, options.password)
     }
 
     public static async initBrowser(options: TBuild) {
